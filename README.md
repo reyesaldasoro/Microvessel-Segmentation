@@ -4,12 +4,12 @@ An automatic algorithm for the segmentation and morphological analysis of microv
 
 
 <h3>
-                   
-<b> C.C. Reyes-Aldasoro</b>, L Williams, S Akerman, C Kanthou and G. M. Tozer, 
-"An automatic algorithm for the segmentation and morphological analysis of microvessels in immunostained histological tumour sections", 
+
+<b> C.C. Reyes-Aldasoro</b>, L Williams, S Akerman, C Kanthou and G. M. Tozer,
+"An automatic algorithm for the segmentation and morphological analysis of microvessels in immunostained histological tumour sections",
 <a href="http://onlinelibrary.wiley.com/doi/10.1111/j.1365-2818.2010.03464.x/abstract">Journal of Microscopy</a>, Volume 242, Issue 3, pages 262–278, June 2011.
 </h3>
-          
+
 <h2>Introduction</h2>
 
 
@@ -43,23 +43,23 @@ An automatic algorithm for the segmentation and morphological analysis of microv
 </p>
 
 <pre class="codeinput">[finalCells,statsObjects,finalCells_IHC]       = regionGrowingCells(Endothelial1);
-         
+
 </pre>
 
 
 
 
 
-![Screenshot](manualEndoSegmentation_01.png)
+![Screenshot](Figures/manualEndoSegmentation_01.png)
 
 
 <p>This function will process the image and will segment all the brown endothelial cells stressing the vessel like structures
             as detailed in the Journal of Microscopy paper. The function will display the resulting segmented cells directly, but you
             can plot it in a separate figure with the following commands:
          </p>
-         
+
 <pre class="codeinput">
-         
+
 figure(1)
 imagesc(finalCells_IHC)
 
@@ -67,11 +67,11 @@ figure(3)
 imagesc(finalCells)
 </pre>
 
-![Screenshot](manualEndoSegmentation_02.png)       
+![Screenshot](Figures/manualEndoSegmentation_02.png)       
 
-![Screenshot](manualEndoSegmentation_03.png)
+![Screenshot](Figures/manualEndoSegmentation_03.png)
 
-         
+
 <p>From the segmented cells, it is possible to extract many measurements (also detailed in the paper). These are obtained with
             the following commands:
 </p>
@@ -97,7 +97,7 @@ avFilledArea                            = mean([tempProps.FilledArea]);
 <p>The last "if" is necessary as in some cases there may not be any objects and an error message would appear (do not worry too
             much about this, just copy-and-paste it).
 </p>
-         
+
 <h2>Ratio of brown in the whole image</h2>
 <p>Finally, if you are interested just in the total amount of brown in the whole image, this can be calculated by adding all
             the pixels in brown and dividing by the size of the image:
@@ -123,7 +123,7 @@ avFilledArea                            = mean([tempProps.FilledArea]);
 
 
 
-![Screenshot](DesktopFolder.png)
+![Screenshot](Figures/DesktopFolder.png)
 
 <p> It may be the case that you have 2 formats, like png and jpg (but ideally
             all your images should be the same format) so the following line covers both png and jpg:
@@ -151,10 +151,10 @@ avFilledArea                            = mean([tempProps.FilledArea]);
 disp (ResultForMeasurement)
 
 
-![Screenshot](manualEndoSegmentation_04.png)
+![Screenshot](Figures/manualEndoSegmentation_04.png)
 
 <h2>Final warning<a name="15"></a></h2>
-         
+
 <p>One <b>VERY</b> important thing to notice is that Matlab will not read the files in the same order as the finder of the Macs, therefore the
             order of the files stored will not be exactly the same as the one you will see with the finder. Matlab will read the file
             names sequentially, so File2 will come after File1, File11, File12, ...
