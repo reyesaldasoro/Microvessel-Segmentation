@@ -101,7 +101,7 @@ function [NosplittedCells,splittedCells,NoHoleCells]= splitObjects(largeEndoCell
                             for k=1:size(distBetHoles)
                                 if (distBetHoles(k,1)<10)&(sum(distBetHoles(k,4:5),2)<199)
                                     %------ last criterion, if holes are close, they need to have areas larger than 100 pixels each 
-                                    boundariesBetweenHoles= boundariesBetweenHoles+imclose(ismember(boundariesBetweenHoles,[distBetHoles(k,2) distBetHoles(k,3) ]),[1 1 1;1 1 1; 1 1 1]);
+                                    boundariesBetweenHoles= boundariesBetweenHoles+uint8(imclose(ismember(boundariesBetweenHoles,[distBetHoles(k,2) distBetHoles(k,3) ]),[1 1 1;1 1 1; 1 1 1]));
                                 end
                             end
                         end
