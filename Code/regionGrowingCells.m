@@ -1,4 +1,4 @@
-function [finalCells,statsObjects3,finalCellsIm,BW2, BW3,BW4,BW6,im2] = regionGrowingCells(varargin)
+function [finalCells,statsObjects3,finalCellsIm,statsObjects2,BW2, BW3,BW4,BW6,im2] = regionGrowingCells(varargin)
 %function [finalCells,statsObjects3,finalCellsIm,BW6] = regionGrowingCells(dataIn)
 %------- VARARGIN   :   {1} dataIn = image to be analysed it can be an image, mat file or file name
 %-------                {4} im1, im1_HSV, im1_HSV_1, chrom3D_im1
